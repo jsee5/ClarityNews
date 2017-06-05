@@ -28,7 +28,7 @@ app.get('/api/source/:id', function (req, res) {
     res.send('Invalid source');
   }
   request.get({
-    url: process.env.ARTICLES_URL + req.params.id + process.env.API_KEY
+    url: process.env.ARTICLES_URL + req.params.id + '&apiKey='+ process.env.API_KEY
   },
     function (error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -37,7 +37,7 @@ app.get('/api/source/:id', function (req, res) {
     })
 })
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(path.join(__dirname + '/dist')));
 
 
 app.get('/*', function(req, res) {
