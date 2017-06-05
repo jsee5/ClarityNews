@@ -1,9 +1,9 @@
-<div class="main-container">
-  <div class="header">
+<clr-main-container>
+  <clr-header>
     <div class="branding">
       <span class="title">Today's News</span>
     </div>
-  </div>
+  </clr-header>
   <div class="content-container">
     <div class="content-area">
       <div class="row" *ngFor="let article of articles">
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <nav class="sidenav">
+    <nav class="sidenav" [clr-nav-level]="1">
       <section class="sidenav-content">
         <div class="nav-link" *ngFor="let source of sources" (click)="selectSource(source.id,$event)">
           {{source.name}}
@@ -36,6 +36,6 @@
       </section>
     </nav>
   </div>
-</div>
+</clr-main-container>
 
 <router-outlet></router-outlet>
