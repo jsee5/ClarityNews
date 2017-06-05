@@ -28,7 +28,8 @@ app.get('/api/source/:id', function (req, res) {
     res.send('Invalid source');
   }
   request.get({
-    url: process.env.ARTICLES_URL + req.params.id + '&apiKey='+ process.env.API_KEY
+    url: process.env.ARTICLES_URL + req.params.id + '&apiKey='+ process.env.API_KEY,
+    headers: 'x-request-id'
   },
     function (error, response, body) {
       if (!error && response.statusCode == 200) {
