@@ -33,7 +33,6 @@ export class AppComponent implements OnInit {
     this.newsService.getNewsFrom(this.id).subscribe(
       news => {
         this.articles = news.articles;
-        console.log(news.articles);
       },
       err => {
         console.log('error retrieving articles');
