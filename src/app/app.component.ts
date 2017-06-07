@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NewsService } from './services/news.service';
 import { SourceService } from './services/source.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   articles: any[];
@@ -29,6 +27,7 @@ export class AppComponent implements OnInit {
       }
     );
   }
+
   loadNews() {
     this.newsService.getNewsFrom(this.id).subscribe(
       news => {
@@ -43,6 +42,4 @@ export class AppComponent implements OnInit {
     this.id = id;
     this.loadNews();
   }
-
-
 }

@@ -1,13 +1,13 @@
 <clr-main-container>
-  <clr-header>
+  <clr-header style="background-color: #314351">
     <div class="branding">
-      <span class="title">Today's News</span>
+      <span class="title">Clarity News</span>
     </div>
   </clr-header>
   <div class="content-container">
     <div class="content-area">
       <div class="row" *ngFor="let article of articles">
-        <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 col-xs-12">
           <a href="{{article.url}}" class="card clickable">
             <div class="card-header">
               {{article.title}}
@@ -27,7 +27,6 @@
         </div>
       </div>
     </div>
-
     <nav class="sidenav" [clr-nav-level]="1">
       <section class="sidenav-content">
         <div class="nav-link" *ngFor="let source of sources" (click)="selectSource(source.id,$event)">
@@ -37,5 +36,3 @@
     </nav>
   </div>
 </clr-main-container>
-
-<router-outlet></router-outlet>
